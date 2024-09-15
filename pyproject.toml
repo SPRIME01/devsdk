@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "Dev SDK"
+version = "0.1.0"
+description = ""
+authors = ["Samuel Prime"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+uvicorn = "^0.30.6"
+kubernetes = "^30.1.0"
+pyyaml = "^6.0.2"
+fastapi = "^0.114.2"
+redis = "^5.0.8"
+python-arango = "^8.1.1"
+nvidia-pytriton = "^0.5.10"
+deeplake = "^3.9.23"
+pydantic = "^2.9.1"
+gunicorn = "^23.0.0"
+docker = "^7.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-bdd = "^7.2.0"
+black = "^24.8.0"
+flake8 = "^7.1.1"
+mypy = "^1.11.2"
+pyre-check = "^0.9.22"
+monkeytype = "^23.3.0"
+pytype = "^2024.9.13"
+pre-commit = "^3.8.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+k3s-install = "src.infrastructure.k3s.k3s_manager:install"
+k3s-status = "src.infrastructure.k3s.k3s_manager:status"

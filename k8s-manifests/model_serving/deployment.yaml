@@ -1,0 +1,21 @@
+# Defines the Triton Server deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: triton-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: triton-server
+  template:
+    metadata:
+      labels:
+        app: triton-server
+    spec:
+      containers:
+        - name: triton-server
+          image: triton-server:latest
+          ports:
+            - containerPort: 8000
